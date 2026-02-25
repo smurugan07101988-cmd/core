@@ -1,12 +1,11 @@
-name: my first workflow
 on: push
 
 jobs:
     first_job:
         runs-on: ubuntu-latest
         steps: 
-        - name: Welcome message
-          run: "echo My first echo job"
+        - name: checkout 
+          uses: actions/checkout@v6        
 
         - name: list files
           run: ls
