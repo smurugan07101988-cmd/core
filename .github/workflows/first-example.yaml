@@ -8,19 +8,8 @@ jobs:
         - name: checkout 
           uses: actions/checkout@v6        
 
-        - name: list files
-          run: |
-            ls -ltrh
-            cat README.md
+        - name: list the files before run
+          run: ls -ltrh
 
-        - name: Install cowsay
-          run: sudo apt-get update && sudo apt-get install cowsay -y
-
-        - name: Generate ASCII Artwork
-          run: cowsay -f dragon "Run for cover, I am a DRAGON....RAWR" >> dragon.txt
-
-        - name: verify the dragon
-          run: grep -i dragon dragon.txt
-
-        - name: file check
-          run: cat dragon.txt
+        - name: run the script
+          run: ./ascii-script.sh
